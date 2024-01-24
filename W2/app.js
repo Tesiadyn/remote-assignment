@@ -1,12 +1,9 @@
-// let ctaButton = document.querySelector(".cta");
-// let toggleCard = document.querySelectorAll(".intro-cards")[1];
-// ctaButton.addEventListener("click", () => {
-//   if (toggleCard.classList.contains("hidden")) {
-//     toggleCard.classList.remove("hidden");
-//   } else {
-//     toggleCard.classList.add("hidden");
-//   }
-// });
+/* ------------------------------- header text ------------------------------ */
+let header = document.querySelector("header");
+console.log(header);
+header.addEventListener("click", () => {
+  header.innerHTML = "<h1>Have a Good Time!</h1>";
+});
 
 /* ------------------------------- hidden card ------------------------------ */
 let ctaButton = document.querySelector(".cta");
@@ -73,25 +70,24 @@ function calculatePrice(data) {
   let allDiscountedItem = [];
 
   for (let i = 0; i < data.products.length; i++) {
-    let product = data.products[i];
-    let productName = data.products[i].name;
-    let price = data.products[i].price;
-    let discount = data.discount;
-    let discountedPrice;
+    let { name, price } = data.products[i];
+    //  name = data.products[i].name price = data.products[i].price
+    //  不需要product = data.products[i]
+    let { discount } = data;
+    //  discount = data.discount
 
-    discountedPrice = price * (1 - discount);
+    let discountedPrice = price * (1 - discount);
     totalDiscounts += price * discount;
 
     let discountedItem = [
       {
-        name: productName,
+        name,
         priceAfterDiscounted: discountedPrice,
       },
     ];
     allDiscountedItem.push(discountedItem);
   }
   return allDiscountedItem;
-  return totalDiscounts;
 }
 const discountedPrice = calculatePrice({
   discount: 0.1,
@@ -115,19 +111,17 @@ const discountedPrice = calculatePrice({
 console.log(discountedPrice);
 
 /* --------------------------------- twoSum --------------------------------- */
-function twoSum(nums, target){
-
+function twoSum(nums, target) {
   let answer = [];
 
-  for ( i = 0 ; i < nums.length ; i++){
-    for ( j = i + 1 ; j < nums.length ; j++){
-      if ( nums[i] + nums[j] == target){
-        answer.push(nums[i],nums[j]);
+  for (i = 0; i < nums.length; i++) {
+    for (j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        answer.push(nums[i], nums[j]);
       }
     }
   }
   return answer;
 }
-console.log(twoSum([2, 7, 90, 11],101));
+console.log(twoSum([2, 7, 90, 11], 101));
 // 可用，但效率不好，須找其他更佳的解法
-

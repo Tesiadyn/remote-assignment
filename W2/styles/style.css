@@ -108,13 +108,16 @@ button.cta {
     top: -12px;
 
 }
-.layout-toggle{
+
+.layout-toggle {
     display: none;
 
 }
-.hidden{
+
+.hidden {
     display: none;
 }
+
 @media screen and (max-width: 499px) {
     section.intro-cards .cards {
         grid-template-columns: 1fr;
@@ -160,7 +163,8 @@ button.cta {
         display: flex;
         top: 0;
     }
-    .layout-toggle{
+
+    .layout-toggle {
         display: flex;
         cursor: pointer;
         position: absolute;
@@ -170,6 +174,7 @@ button.cta {
         top: 1rem;
         right: 1rem;
     }
+
     .layout-toggle i {
         font-size: 2rem;
     }
