@@ -1,6 +1,6 @@
 /* ------------------------------- header text ------------------------------ */
 let header = document.querySelector("header");
-console.log(header);
+
 header.addEventListener("click", () => {
   header.innerHTML = "<h1>Have a Good Time!</h1>";
 });
