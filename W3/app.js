@@ -5,23 +5,17 @@ const app = express();
 // 將express存至app方便調用
 // app.use(bodyParser.urlencoded({ extended: false }));
 
-
-app.use(express.static('public'))
-
+app.use(express.static("public"));
+// hosting static doc
 function calc(num) {
-
-    let sum = 0;
-    for (i = 0; i <= num; i++) {
-      sum += i;
-    }
-    return sum;
-  };
- 
-
+  let sum = 0;
+  for (i = 0; i <= num; i++) {
+    sum += i;
+  }
+  return sum;
+}
 
 app.get("/getData", (req, res) => {
-//   console.dir(req.query);
-
   let num = req.query.number;
   let result = 0;
 
